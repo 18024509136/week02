@@ -20,6 +20,16 @@
     
     <build>
         <plugins>
+            <plugin>    <!--plugins要写在build标签下，不然无法识别 -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>    <!--maven-compiler-plugin版本写一个中央仓库有的版本，保存后它会自动下载 -->
+                <configuration>
+                    <source>8</source>    <!--我的jdk是10.0.1的，写成10.0.1不好用，所以就写成10了 -->
+                    <target>8</target>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
